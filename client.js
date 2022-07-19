@@ -7,7 +7,7 @@ function printToDom() {
 function display() {
   let employeeDisplay = $('#employeeBonus');
   employeeDisplay.empty();
-  ;
+  employeeDisplay.append();
 }
 
 const employees = [
@@ -64,8 +64,8 @@ function bonus(employees) {
       employeePlusBonus.bonusPercentage = employeeBonusPerct;
       employeePlusBonus.totalCompensation = totalPay;
       employeePlusBonus.totalBonus = totalBon;
-     } else if (employee.reviewRating <= 3) {
-      let employeeBonusPerct = 0.04;
+      } else if (employee.reviewRating <= 3) {
+        let employeeBonusPerct = 0.04;
       if (employee.employeeNumber.length <= 4) {
         employeeBonusPerct += 0.05;
       }
@@ -81,8 +81,8 @@ function bonus(employees) {
       employeePlusBonus.bonusPercentage = employeeBonusPerct;
       employeePlusBonus.totalCompensation = totalPay;
       employeePlusBonus.totalBonus = totalBon;
-     } else if (employee.reviewRating <= 4) {
-      let employeeBonusPerct = 0.06;
+      } else if (employee.reviewRating <= 4) {
+        let employeeBonusPerct = 0.06;
       if (employee.employeeNumber.length <= 4) {
         employeeBonusPerct += 0.05;
       }
@@ -98,8 +98,8 @@ function bonus(employees) {
       employeePlusBonus.bonusPercentage = employeeBonusPerct;
       employeePlusBonus.totalCompensation = totalPay;
       employeePlusBonus.totalBonus = totalBon;
-     } else if (employee.reviewRating <= 5) {
-      let employeeBonusPerct = 0.10;
+      } else if (employee.reviewRating <= 5) {
+        let employeeBonusPerct = 0.10;
       if (employee.employeeNumber.length <= 4) {
         employeeBonusPerct += 0.05;
       }
@@ -118,11 +118,9 @@ function bonus(employees) {
      }
     console.log(employeePlusBonus)
   }
-  
   return employeePlusBonus;
-  
 }
 
-bonus(employees);
-
+results = bonus(employees);
+console.log(results);
 console.log( employees );
