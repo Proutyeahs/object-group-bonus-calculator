@@ -7,7 +7,7 @@ function printToDom() {
 function display() {
   let employeeDisplay = $('#employeeBonus');
   employeeDisplay.empty();
-  employeeDisplay.append();
+  employeeDisplay.append(`<li>` + results.name, results.bonusPercentage +'%, $'+ results.totalCompensation +', '+ results.totalBonus + "%");
 }
 
 const employees = [
@@ -121,6 +121,6 @@ function bonus(employees) {
   return employeePlusBonus;
 }
 
-results = bonus(employees);
+let results = bonus(employees);
 console.log(results);
 console.log( employees );
