@@ -1,3 +1,15 @@
+$( document ).ready(printToDom);
+
+function printToDom() {
+  $( '#btn' ).on( 'click', display);
+}
+
+function display() {
+  let employeeDisplay = $('#employeeBonus');
+  employeeDisplay.empty();
+  ;
+}
+
 const employees = [
   {
     name: 'Atticus',
@@ -38,5 +50,79 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
+
+
+
+function bonus(employees) {
+  let employeePlusBonus = {};
+  for (employee of employees) {
+    if (employee.reviewRating <= 2) {
+      let employeeBonusPerct = 0;
+      let totalBon = Number(employee.annualSalary) * employeeBonusPerct
+      let totalPay = Number(employee.annualSalary) + totalBon;
+      employeePlusBonus.name = employee.name;
+      employeePlusBonus.bonusPercentage = employeeBonusPerct;
+      employeePlusBonus.totalCompensation = totalPay;
+      employeePlusBonus.totalBonus = totalBon;
+     } else if (employee.reviewRating <= 3) {
+      let employeeBonusPerct = 0.04;
+      if (employee.employeeNumber.length <= 4) {
+        employeeBonusPerct += 0.05;
+      }
+      if (employee.annualSalary > 65000) {
+        employeeBonusPerct -= 0.01;
+      }
+      if (employeeBonusPerct > .13) {
+        employeeBonusPerct = .13;
+      }
+      let totalBon = Number(employee.annualSalary) * employeeBonusPerct
+      let totalPay = Number(employee.annualSalary) + totalBon;
+      employeePlusBonus.name = employee.name;
+      employeePlusBonus.bonusPercentage = employeeBonusPerct;
+      employeePlusBonus.totalCompensation = totalPay;
+      employeePlusBonus.totalBonus = totalBon;
+     } else if (employee.reviewRating <= 4) {
+      let employeeBonusPerct = 0.06;
+      if (employee.employeeNumber.length <= 4) {
+        employeeBonusPerct += 0.05;
+      }
+      if (employee.annualSalary > 65000) {
+        employeeBonusPerct -= 0.01;
+      }
+      if (employeeBonusPerct > .13) {
+        employeeBonusPerct = .13;
+      }
+      let totalBon = Number(employee.annualSalary) * employeeBonusPerct
+      let totalPay = Number(employee.annualSalary) + totalBon;
+      employeePlusBonus.name = employee.name;
+      employeePlusBonus.bonusPercentage = employeeBonusPerct;
+      employeePlusBonus.totalCompensation = totalPay;
+      employeePlusBonus.totalBonus = totalBon;
+     } else if (employee.reviewRating <= 5) {
+      let employeeBonusPerct = 0.10;
+      if (employee.employeeNumber.length <= 4) {
+        employeeBonusPerct += 0.05;
+      }
+      if (employee.annualSalary > 65000) {
+        employeeBonusPerct -= 0.01;
+      }
+      if (employeeBonusPerct > .13) {
+        employeeBonusPerct = .13;
+      }
+      let totalBon = Number(employee.annualSalary) * employeeBonusPerct
+      let totalPay = Number(employee.annualSalary) + totalBon;
+      employeePlusBonus.name = employee.name;
+      employeePlusBonus.bonusPercentage = employeeBonusPerct;
+      employeePlusBonus.totalCompensation = totalPay;
+      employeePlusBonus.totalBonus = totalBon;
+     }
+    console.log(employeePlusBonus)
+  }
+  
+  return employeePlusBonus;
+  
+}
+
+bonus(employees);
 
 console.log( employees );
